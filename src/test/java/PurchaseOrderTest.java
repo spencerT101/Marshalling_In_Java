@@ -68,6 +68,12 @@ public class PurchaseOrderTest {
         assertEquals(10.00,purchaseOrder1.getOrderAmount(),0.00);
     }
 
+    @Test
+    public void canGetPurchaseOrderShippingAddressLine1(){
+        assertEquals("123 Fake St", purchaseOrder1.getPurchaseOrderShippingAddressLine1(shippingAddress1));
+    }
+
+    @Test
 
 
 
