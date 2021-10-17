@@ -12,6 +12,7 @@ public class PurchaseOrderTest {
     private String newFirstName;
     private String newLastName;
     private String newCompanyName;
+    private double newOrderAmount;
 
     @Before
     public void setup(){
@@ -58,6 +59,13 @@ public class PurchaseOrderTest {
     @Test
     public void canGetPurchaseOrderOrderAmount(){
         assertEquals(2.00, purchaseOrder1.getOrderAmount(), 0.00);
+    }
+
+    @Test
+    public void canSetPurchaseOrderOrderAmount(){
+        newOrderAmount = 10.00;
+        purchaseOrder1.setOrderAmount(newOrderAmount);
+        assertEquals(10.00,purchaseOrder1.getOrderAmount(),0.00);
     }
 
 
