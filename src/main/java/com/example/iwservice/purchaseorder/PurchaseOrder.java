@@ -1,10 +1,10 @@
-package com.example.iwservice.customer;
+package com.example.iwservice.purchaseorder;
 import com.example.iwservice.shippingaddress.ShippingAddress;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class Customer {
+public class PurchaseOrder {
 
 
     private String customerFirst;
@@ -14,7 +14,7 @@ public class Customer {
     private ShippingAddress shippingAddress;
 
 
-    public Customer(String customerFirst, String customerLast, String company, double orderAmount, ShippingAddress shippingAddress) {
+    public PurchaseOrder(String customerFirst, String customerLast, String company, double orderAmount, ShippingAddress shippingAddress) {
         this.customerFirst = customerFirst;
         this.customerLast = customerLast;
         this.company = company;
@@ -22,7 +22,7 @@ public class Customer {
         this.shippingAddress = shippingAddress;
     }
 
-    public Customer(){
+    public PurchaseOrder(){
 
     }
 

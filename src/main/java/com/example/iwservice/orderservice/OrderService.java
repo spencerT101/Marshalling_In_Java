@@ -1,10 +1,10 @@
 package com.example.iwservice.orderservice;
-import com.example.iwservice.customer.Customer;
+import com.example.iwservice.purchaseorder.PurchaseOrder;
 
 public class OrderService {
 
-    public Customer upDateOrderAmount(Customer customer){
-        customer.setOrderAmount(customer.getOrderAmount()*1.23);
-        return customer;
+    public PurchaseOrder upDateOrderAmount(PurchaseOrder purchaseOrder){
+        purchaseOrder.setOrderAmount(purchaseOrder.getOrderAmount()*1.23);
+        return purchaseOrder;
     }
 }
