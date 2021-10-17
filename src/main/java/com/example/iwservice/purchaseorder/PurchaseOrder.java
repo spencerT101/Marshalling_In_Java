@@ -68,7 +68,8 @@ public class PurchaseOrder {
     }
 
     public String setPurchaseOrderShippingAddressLine1(ShippingAddress shippingAddress, String newAddressLine1){
-         return shippingAddress.setShippingAddressLine1(newAddressLine1);
+          shippingAddress.setShippingAddressLine1(newAddressLine1);
+          return getPurchaseOrderShippingAddressLine1(shippingAddress);
     }
 
     @XmlElement(name = "OrderAmount")

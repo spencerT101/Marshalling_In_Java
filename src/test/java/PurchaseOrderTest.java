@@ -13,6 +13,7 @@ public class PurchaseOrderTest {
     private String newLastName;
     private String newCompanyName;
     private double newOrderAmount;
+    private String newAddressLine1;
 
     @Before
     public void setup(){
@@ -74,6 +75,10 @@ public class PurchaseOrderTest {
     }
 
     @Test
+    public void canSetPurchaseOrderShippingAddressLine1(){
+        newAddressLine1 = "321 Fake St";
+        assertEquals("321 Fake St", purchaseOrder1.setPurchaseOrderShippingAddressLine1(shippingAddress1, newAddressLine1));
+    }
 
 
 
