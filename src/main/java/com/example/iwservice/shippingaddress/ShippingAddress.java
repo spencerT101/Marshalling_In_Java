@@ -12,8 +12,8 @@ public class ShippingAddress {
     public ShippingAddress(String shippingAddressLine1, String shippingAddressLine2) {
         this.ShippingAddressLine1 = shippingAddressLine1;
         this.ShippingAddressLine2 = shippingAddressLine2;
-
     }
+
     public ShippingAddress(){
 
     }
@@ -33,7 +33,7 @@ public class ShippingAddress {
     }
 
     public void setShippingAddressLine2(String shippingAddressLine2) {
-        ShippingAddressLine2 = shippingAddressLine2;
+        this.ShippingAddressLine2 = shippingAddressLine2;
     }
 }
 
