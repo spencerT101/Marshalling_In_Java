@@ -50,7 +50,9 @@ public class PurchaseOrderTest {
 
     @Test
     public void canSetPurchaseOrderCompanyName(){
-        
+        newCompanyName = "Quixotic Company";
+        purchaseOrder1.setCompany(newCompanyName);
+        assertEquals("Quixotic Company", purchaseOrder1.getCompany());
     }
 
 
