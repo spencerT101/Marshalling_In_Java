@@ -11,6 +11,7 @@ public class PurchaseOrderTest {
     private ShippingAddress shippingAddress1;
     private String newFirstName;
     private String newLastName;
+    private String newCompanyName;
 
     @Before
     public void setup(){
@@ -40,6 +41,16 @@ public class PurchaseOrderTest {
         newLastName = "Smith";
         purchaseOrder1.setCustomerLast(newLastName);
         assertEquals("Smith", purchaseOrder1.getCustomerLast());
+    }
+
+    @Test
+    public void canGetPurchaseOrderCompanyName(){
+        assertEquals("Fake Company Pty Ltd", purchaseOrder1.getCompany());
+    }
+
+    @Test
+    public void canSetPurchaseOrderCompanyName(){
+        
     }
 
 
