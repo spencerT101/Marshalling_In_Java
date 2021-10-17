@@ -9,7 +9,8 @@ import static org.junit.Assert.assertEquals;
 public class PurchaseOrderTest {
     private PurchaseOrder purchaseOrder1;
     private ShippingAddress shippingAddress1;
-    private String newName;
+    private String newFirstName;
+    private String newLastName;
 
     @Before
     public void setup(){
@@ -24,8 +25,8 @@ public class PurchaseOrderTest {
 
     @Test
     public void canSetPurchaseOrderCustomerFirstName(){
-       newName = "Pete";
-       purchaseOrder1.setCustomerFirst(newName);
+       newFirstName = "Pete";
+       purchaseOrder1.setCustomerFirst(newFirstName);
        assertEquals("Pete", purchaseOrder1.getCustomerFirst());
     }
 
@@ -33,6 +34,14 @@ public class PurchaseOrderTest {
     public void canGetPurchaseOrderCustomerLastName(){
         assertEquals("Doe", purchaseOrder1.getCustomerLast());
     }
+
+    @Test
+    public void canSetPurchaseOrderCustomerLastName(){
+        newLastName = "Smith";
+        purchaseOrder1.setCustomerLast(newLastName);
+        assertEquals("Smith", purchaseOrder1.getCustomerLast());
+    }
+
 
 
 
