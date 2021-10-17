@@ -18,15 +18,20 @@ public class PurchaseOrderTest {
     }
 
     @Test
-    public void canGetPurchaseOrderCustomerFirst(){
+    public void canGetPurchaseOrderCustomerFirstName(){
         assertEquals("John", purchaseOrder1.getCustomerFirst());
     }
 
     @Test
-    public void canSetPurchaseOrderCustomerFirst(){
+    public void canSetPurchaseOrderCustomerFirstName(){
        newName = "Pete";
        purchaseOrder1.setCustomerFirst(newName);
        assertEquals("Pete", purchaseOrder1.getCustomerFirst());
+    }
+
+    @Test
+    public void canGetPurchaseOrderCustomerLastName(){
+        assertEquals("Doe", purchaseOrder1.getCustomerLast());
     }
 
 
