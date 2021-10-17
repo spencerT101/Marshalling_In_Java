@@ -55,6 +55,11 @@ public class PurchaseOrderTest {
         assertEquals("Quixotic Company", purchaseOrder1.getCompany());
     }
 
+    @Test
+    public void canGetPurchaseOrderOrderAmount(){
+        assertEquals(2.00, purchaseOrder1.getOrderAmount(), 0.00);
+    }
+
 
 
 
