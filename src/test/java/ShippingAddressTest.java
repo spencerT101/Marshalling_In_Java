@@ -34,8 +34,9 @@ public class ShippingAddressTest {
 
     @Test
     public void canSetShippingAddressLine2(){
-        newAddressLine2 = ""
-        assertEquals();
+        newAddressLine2 = "Knock-off Building";
+        shippingAddress0.setShippingAddressLine2(newAddressLine2);
+        assertEquals("Knock-off Building", shippingAddress0.getShippingAddressLine2());
     }
 
 
