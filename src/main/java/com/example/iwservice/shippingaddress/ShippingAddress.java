@@ -7,11 +7,13 @@ public class ShippingAddress {
 
     private String ShippingAddressLine1;
     private String ShippingAddressLine2;
+    private String City;
 
 
-    public ShippingAddress(String shippingAddressLine1, String shippingAddressLine2) {
+    public ShippingAddress(String shippingAddressLine1, String shippingAddressLine2, String city) {
         this.ShippingAddressLine1 = shippingAddressLine1;
         this.ShippingAddressLine2 = shippingAddressLine2;
+        this.City = city;
     }
 
     public ShippingAddress(){
@@ -34,6 +36,14 @@ public class ShippingAddress {
 
     public void setShippingAddressLine2(String shippingAddressLine2) {
         this.ShippingAddressLine2 = shippingAddressLine2;
+    }
+
+    public String getCity() {
+        return City;
+    }
+
+    public void setCity(String newCity) {
+        this.City = newCity;
     }
 }
 
