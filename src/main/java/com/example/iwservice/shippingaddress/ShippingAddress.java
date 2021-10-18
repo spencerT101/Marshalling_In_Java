@@ -38,6 +38,7 @@ public class ShippingAddress {
         this.ShippingAddressLine2 = shippingAddressLine2;
     }
 
+    @XmlElement(name = "City")
     public String getCity() {
         return City;
     }
