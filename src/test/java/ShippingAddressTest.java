@@ -10,6 +10,7 @@ public class ShippingAddressTest {
     private String newAddressLine1;
     private String newAddressLine2;
     private String newCity;
+    private String newPostCode;
 
     @Before
     public void setup(){
@@ -56,6 +57,13 @@ public class ShippingAddressTest {
     @Test
     public void canGetPostCode(){
         assertEquals("UN0 0NU", shippingAddress0.getPostCode());
+    }
+
+    @Test
+    public void canSetPostCode(){
+        newPostCode = "NO8 4RL";
+        shippingAddress0.setPostCode(newPostCode);
+        assertEquals("NO8 4RL", shippingAddress0.getPostCode());
     }
 
 }

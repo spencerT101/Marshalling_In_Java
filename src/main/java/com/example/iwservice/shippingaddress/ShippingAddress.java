@@ -52,6 +52,10 @@ public class ShippingAddress {
     public String getPostCode() {
         return PostCode;
     }
+
+    public void setPostCode(String newPostCode) {
+        this.PostCode = newPostCode;
+    }
 }
 
 
