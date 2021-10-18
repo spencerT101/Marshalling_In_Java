@@ -49,6 +49,7 @@ public class ShippingAddress {
         this.City = newCity;
     }
 
+    @XmlElement(name = "Postcode")
     public String getPostCode() {
         return PostCode;
     }
