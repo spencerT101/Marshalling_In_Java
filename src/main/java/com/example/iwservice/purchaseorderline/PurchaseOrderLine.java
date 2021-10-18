@@ -11,4 +11,8 @@ public class PurchaseOrderLine {
     public String getItemID(){
         return itemID;
     }
+
+    public void setItemID(String newItemID) {
+        this.itemID = newItemID;
+    }
 }
