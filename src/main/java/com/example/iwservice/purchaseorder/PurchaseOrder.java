@@ -1,4 +1,5 @@
 package com.example.iwservice.purchaseorder;
+import com.example.iwservice.purchaseorderdetail.PurchaseOrderDetail;
 import com.example.iwservice.shippingaddress.ShippingAddress;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -12,14 +13,16 @@ public class PurchaseOrder {
     private String company;
     private double orderAmount;
     private ShippingAddress shippingAddress;
+    private PurchaseOrderDetail purchaseOrderDetail;
 
 
-    public PurchaseOrder(String customerFirst, String customerLast, String company, double orderAmount, ShippingAddress shippingAddress) {
+    public PurchaseOrder(String customerFirst, String customerLast, String company, double orderAmount, ShippingAddress shippingAddress, PurchaseOrderDetail purchaseOrderDetail) {
         this.customerFirst = customerFirst;
         this.customerLast = customerLast;
         this.company = company;
         this.orderAmount = orderAmount;
         this.shippingAddress = shippingAddress;
+        this.purchaseOrderDetail = purchaseOrderDetail;
     }
 
     public PurchaseOrder(){
@@ -79,6 +82,11 @@ public class PurchaseOrder {
 
     public void setOrderAmount(double orderAmount) {
         this.orderAmount = orderAmount;
+    }
+
+    @XmlElement(name = "purchaseOrderDetail")
+    public PurchaseOrderDetail getPurchaseOrderDetail(){
+        return purchaseOrderDetail;
     }
 
 }

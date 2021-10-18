@@ -5,19 +5,19 @@ import javax.xml.bind.annotation.XmlElement;
 public class ShippingAddress {
 
 
-    private String ShippingAddressLine1;
-    private String ShippingAddressLine2;
-    private String City;
-    private String PostCode;
-    private String Country;
+    private String shippingAddressLine1;
+    private String shippingAddressLine2;
+    private String city;
+    private String postCode;
+    private String country;
 
 
     public ShippingAddress(String shippingAddressLine1, String shippingAddressLine2, String city, String postCode, String country) {
-        this.ShippingAddressLine1 = shippingAddressLine1;
-        this.ShippingAddressLine2 = shippingAddressLine2;
-        this.City = city;
-        this.PostCode = postCode;
-        this.Country = country;
+        this.shippingAddressLine1 = shippingAddressLine1;
+        this.shippingAddressLine2 = shippingAddressLine2;
+        this.city = city;
+        this.postCode = postCode;
+        this.country = country;
     }
 
     public ShippingAddress(){
@@ -26,47 +26,47 @@ public class ShippingAddress {
 
     @XmlElement(name = "ShippingAddressLine1")
     public String getShippingAddressLine1() {
-        return ShippingAddressLine1;
+        return shippingAddressLine1;
     }
 
     public void setShippingAddressLine1(String shippingAddressLine1) {
-        this.ShippingAddressLine1 = shippingAddressLine1;
+        this.shippingAddressLine1 = shippingAddressLine1;
     }
 
     @XmlElement(name = "ShippingAddressLine2")
     public String getShippingAddressLine2() {
-        return ShippingAddressLine2;
+        return shippingAddressLine2;
     }
 
     public void setShippingAddressLine2(String shippingAddressLine2) {
-        this.ShippingAddressLine2 = shippingAddressLine2;
+        this.shippingAddressLine2 = shippingAddressLine2;
     }
 
     @XmlElement(name = "City")
     public String getCity() {
-        return City;
+        return city;
     }
 
     public void setCity(String newCity) {
-        this.City = newCity;
+        this.city = newCity;
     }
 
     @XmlElement(name = "Postcode")
     public String getPostCode() {
-        return PostCode;
+        return postCode;
     }
 
     public void setPostCode(String newPostCode) {
-        this.PostCode = newPostCode;
+        this.postCode = newPostCode;
     }
 
     @XmlElement(name = "Country")
     public String getCountry() {
-        return Country;
+        return country;
     }
 
     public void setCountry(String newCountry) {
-        this.Country = newCountry;
+        this.country = newCountry;
     }
 }
 

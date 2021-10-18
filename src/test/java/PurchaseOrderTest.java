@@ -1,4 +1,5 @@
 import com.example.iwservice.purchaseorder.PurchaseOrder;
+import com.example.iwservice.purchaseorderdetail.PurchaseOrderDetail;
 import com.example.iwservice.shippingaddress.ShippingAddress;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,6 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class PurchaseOrderTest {
     private PurchaseOrder purchaseOrder1;
     private ShippingAddress shippingAddress1;
+    private PurchaseOrderDetail purchaseOrderDetail1;
     private String newFirstName;
     private String newLastName;
     private String newCompanyName;
@@ -17,8 +19,9 @@ public class PurchaseOrderTest {
 
     @Before
     public void setup(){
-        purchaseOrder1 = new PurchaseOrder("John", "Doe", "Fake Company Pty Ltd", 2.00, shippingAddress1 );
+        purchaseOrder1 = new PurchaseOrder("John", "Doe", "Fake Company Pty Ltd", 2.00, shippingAddress1, purchaseOrderDetail1 );
         shippingAddress1 = new ShippingAddress("123 Fake St", "Fake Building", "London", "UN0 0NO", "UK");
+        purchaseOrderDetail1 = new PurchaseOrderDetail("No");
     }
 
     @Test
