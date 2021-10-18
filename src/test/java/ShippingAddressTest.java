@@ -14,7 +14,7 @@ public class ShippingAddressTest {
 
     @Before
     public void setup(){
-        shippingAddress0 = new ShippingAddress("123 Fake St", "Fake Building", "London", "UN0 0NU");
+        shippingAddress0 = new ShippingAddress("123 Fake St", "Fake Building", "London", "UN0 0NU","UK");
     }
 
     @Test
@@ -64,6 +64,11 @@ public class ShippingAddressTest {
         newPostCode = "NO8 4RL";
         shippingAddress0.setPostCode(newPostCode);
         assertEquals("NO8 4RL", shippingAddress0.getPostCode());
+    }
+
+    @Test
+    public void canGetCountry(){
+        assertEquals("UK", shippingAddress0.getCountry());
     }
 
 }

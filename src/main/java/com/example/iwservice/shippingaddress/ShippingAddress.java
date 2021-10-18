@@ -9,13 +9,15 @@ public class ShippingAddress {
     private String ShippingAddressLine2;
     private String City;
     private String PostCode;
+    private String Country;
 
 
-    public ShippingAddress(String shippingAddressLine1, String shippingAddressLine2, String city, String postCode) {
+    public ShippingAddress(String shippingAddressLine1, String shippingAddressLine2, String city, String postCode, String country) {
         this.ShippingAddressLine1 = shippingAddressLine1;
         this.ShippingAddressLine2 = shippingAddressLine2;
         this.City = city;
         this.PostCode = postCode;
+        this.Country = country;
     }
 
     public ShippingAddress(){
@@ -56,6 +58,10 @@ public class ShippingAddress {
 
     public void setPostCode(String newPostCode) {
         this.PostCode = newPostCode;
+    }
+
+    public String getCountry() {
+        return Country;
     }
 }
 
