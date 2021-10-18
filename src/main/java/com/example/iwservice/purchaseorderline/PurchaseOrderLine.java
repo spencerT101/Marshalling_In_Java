@@ -1,5 +1,7 @@
 package com.example.iwservice.purchaseorderline;
 
+import javax.xml.bind.annotation.XmlElement;
+
 public class PurchaseOrderLine {
 
     private String itemID;
@@ -8,6 +10,11 @@ public class PurchaseOrderLine {
         this.itemID = itemID;
     }
 
+    public PurchaseOrderLine(){
+
+    };
+
+    @XmlElement(name = "ItemID")
     public String getItemID(){
         return itemID;
     }

@@ -1,20 +1,25 @@
 package com.example.iwservice.purchaseorderdetail;
 
 import com.example.iwservice.purchaseorder.PurchaseOrder;
+import com.example.iwservice.purchaseorderline.PurchaseOrderLine;
 
 import javax.xml.bind.annotation.XmlElement;
 
 public class PurchaseOrderDetail {
-      private String Detail;
-//    private PurchaseOrderLine purchaseOrderLine;
 
-    public PurchaseOrderDetail(String detail){
-          this.Detail = detail;
+    private PurchaseOrderLine purchaseOrderLine;
+
+    public PurchaseOrderDetail(PurchaseOrderLine purchaseOrderLine){
+          this.purchaseOrderLine = purchaseOrderLine;
 
     }
 
+    public PurchaseOrderDetail(){
 
-    public String getDetail(){
-        return Detail;
+    };
+
+    @XmlElement(name = "purchaseOrderLine")
+    public PurchaseOrderLine getPurchaseOrderLine(){
+        return purchaseOrderLine;
     }
 }
