@@ -82,13 +82,4 @@ public class PurchaseOrderTest {
         newAddressLine1 = "321 Fake St";
         assertEquals("321 Fake St", purchaseOrder1.setPurchaseOrderShippingAddressLine1(shippingAddress1, newAddressLine1));
     }
-
-
-
-
-
-
-
-
-
 }
