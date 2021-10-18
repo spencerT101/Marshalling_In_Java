@@ -11,6 +11,7 @@ public class ShippingAddressTest {
     private String newAddressLine2;
     private String newCity;
     private String newPostCode;
+    private String newCountry;
 
     @Before
     public void setup(){
@@ -69,6 +70,13 @@ public class ShippingAddressTest {
     @Test
     public void canGetCountry(){
         assertEquals("UK", shippingAddress0.getCountry());
+    }
+    
+    @Test
+    public void canSetCountry(){
+        newCountry = "USA";
+        shippingAddress0.setCountry(newCountry);
+        assertEquals("USA", shippingAddress0.getCountry());
     }
 
 }

@@ -63,6 +63,10 @@ public class ShippingAddress {
     public String getCountry() {
         return Country;
     }
+
+    public void setCountry(String newCountry) {
+        this.Country = newCountry;
+    }
 }
 
 
