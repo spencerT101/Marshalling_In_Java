@@ -60,6 +60,7 @@ public class ShippingAddress {
         this.PostCode = newPostCode;
     }
 
+    @XmlElement(name = "Country")
     public String getCountry() {
         return Country;
     }

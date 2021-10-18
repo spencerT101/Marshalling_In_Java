@@ -71,7 +71,7 @@ public class ShippingAddressTest {
     public void canGetCountry(){
         assertEquals("UK", shippingAddress0.getCountry());
     }
-    
+
     @Test
     public void canSetCountry(){
         newCountry = "USA";
