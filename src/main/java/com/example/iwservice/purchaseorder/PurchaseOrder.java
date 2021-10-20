@@ -1,5 +1,6 @@
 package com.example.iwservice.purchaseorder;
 import com.example.iwservice.purchaseorderdetail.PurchaseOrderDetail;
+import com.example.iwservice.purchaseorderline.PurchaseOrderLine;
 import com.example.iwservice.shippingaddress.ShippingAddress;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -14,6 +15,7 @@ public class PurchaseOrder {
     private double orderAmount;
     private ShippingAddress shippingAddress;
     private PurchaseOrderDetail purchaseOrderDetail;
+    private PurchaseOrderLine 
 
 
     public PurchaseOrder(String customerFirst, String customerLast, String company, double orderAmount, ShippingAddress shippingAddress, PurchaseOrderDetail purchaseOrderDetail) {

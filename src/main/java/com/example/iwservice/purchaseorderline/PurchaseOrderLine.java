@@ -1,12 +1,14 @@
 package com.example.iwservice.purchaseorderline;
 
+import com.example.iwservice.purchaseorderdetail.PurchaseOrderDetail;
+
 import javax.xml.bind.annotation.XmlElement;
 
 public class PurchaseOrderLine {
 
     private String itemID;
 
-    public PurchaseOrderLine(String itemID){
+    public PurchaseOrderLine(String itemID){ 
         this.itemID = itemID;
     }
 
