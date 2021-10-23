@@ -7,10 +7,10 @@ import javax.xml.bind.annotation.XmlValue;
 public class PurchaseOrderLine{
 
 
-    private String itemID;
+    private int itemID;
     private String itemName;
 
-    public PurchaseOrderLine(String itemID, String itemName){
+    public PurchaseOrderLine(int itemID, String itemName){
         this.itemID = itemID;
         this.itemName = itemName;
     }
@@ -20,14 +20,14 @@ public class PurchaseOrderLine{
     };
 
     @XmlElement(name = "itemID")
-    public String getItemID(){
+    public int getItemID(){
         return itemID;
     }
 
-    public void setItemID(String newItemID) {
+    public void setItemID(int newItemID) {
         this.itemID = newItemID;
     }
-
+    @XmlElement(name = "itemName")
     public String getItemName() {
         return itemName;
     }

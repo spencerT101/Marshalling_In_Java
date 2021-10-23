@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class PurchaseOrderLineTest {
 
     private PurchaseOrderLine purchaseOrderLine0;
-    private String newItemID;
+    private int newItemID;
     private String newItemName;
 
     @Before
@@ -22,9 +22,9 @@ public class PurchaseOrderLineTest {
 
     @Test
     public void canSetItemID(){
-        newItemID = "78910";
+        newItemID = 78910;
         purchaseOrderLine0.setItemID(newItemID);
-        assertEquals("78910", purchaseOrderLine0.getItemID());
+        assertEquals(78910, purchaseOrderLine0.getItemID());
     }
     @Test
     public void canGetItemName(){
