@@ -8,6 +8,7 @@ public class PurchaseOrderLineTest {
 
     private PurchaseOrderLine purchaseOrderLine0;
     private String newItemID;
+    private String newItemName;
 
     @Before
     public void setUp(){
@@ -28,5 +29,12 @@ public class PurchaseOrderLineTest {
     @Test
     public void canGetItemName(){
         assertEquals("Fake Product", purchaseOrderLine0.getItemName());
+    }
+
+    @Test
+    public void canSetItemName(){
+        newItemName = "Counterfeit Product";
+        purchaseOrderLine0.setItemName(newItemName);
+        assertEquals("Counterfeit Product", purchaseOrderLine0.getItemName());
     }
 }
