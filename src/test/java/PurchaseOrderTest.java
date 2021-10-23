@@ -25,7 +25,7 @@ public class PurchaseOrderTest {
         purchaseOrder1 = new PurchaseOrder("John", "Doe", "Fake Company Pty Ltd", 2.00, shippingAddress1, purchaseOrderDetail1);
         shippingAddress1 = new ShippingAddress("123 Fake St", "Fake Building", "London", "UN0 0NO", "UK");
         purchaseOrderDetail1 = new PurchaseOrderDetail(purchaseOrderLine1);
-        purchaseOrderLine1 = new PurchaseOrderLine(123456, "Fake Product");
+        purchaseOrderLine1 = new PurchaseOrderLine("123456", "Fake Product");
     }
 
     @Test
