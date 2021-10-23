@@ -1,8 +1,7 @@
 package com.example.iwservice.purchaseorderdetail;
 import com.example.iwservice.purchaseorderline.PurchaseOrderLine;
-
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 
 public class PurchaseOrderDetail {
@@ -18,8 +17,12 @@ public class PurchaseOrderDetail {
     public PurchaseOrderDetail(){
     };
 
-    @XmlElement(name = "purchaseOrderLine")
+    @XmlElement(name = "PurchaseOrderLine")
     public PurchaseOrderLine getPurchaseOrderLine(){
         return purchaseOrderLine;
+    }
+
+    public void setPurchaseOrderLine(PurchaseOrderLine purchaseOrderLine){
+        this.purchaseOrderLine = purchaseOrderLine;
     }
 }

@@ -15,7 +15,7 @@ public class PurchaseOrder {
     private double orderAmount;
     private ShippingAddress shippingAddress;
     private PurchaseOrderDetail purchaseOrderDetail;
-    private PurchaseOrderLine 
+
 
 
     public PurchaseOrder(String customerFirst, String customerLast, String company, double orderAmount, ShippingAddress shippingAddress, PurchaseOrderDetail purchaseOrderDetail) {
@@ -25,6 +25,7 @@ public class PurchaseOrder {
         this.orderAmount = orderAmount;
         this.shippingAddress = shippingAddress;
         this.purchaseOrderDetail = purchaseOrderDetail;
+
     }
 
     public PurchaseOrder(){
@@ -86,9 +87,12 @@ public class PurchaseOrder {
         this.orderAmount = orderAmount;
     }
 
-    @XmlElement(name = "purchaseOrderDetail")
+    @XmlElement(name = "PurchaseOrderDetail")
     public PurchaseOrderDetail getPurchaseOrderDetail(){
         return purchaseOrderDetail;
     }
 
+    public void setPurchaseOrderDetail(PurchaseOrderDetail purchaseOrderDetail) {
+        this.purchaseOrderDetail = purchaseOrderDetail;
+    }
 }
