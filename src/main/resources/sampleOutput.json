@@ -1,0 +1,30 @@
+{
+  "data": {
+   "CustomerFirst": "John",
+   "CustomerLast": "Do",
+   "Company": "Fake Company Pty Ltd",
+   "ShippingAddress": {
+      "ShippingAddressLine1": "123 Fake St",
+      "ShippingAddressLine2": "Fake Building",
+      "City": "London",
+      "Postcode": "789 ABC",
+      "Country": "UK"
+   },
+   "PurchaseOrderDetail": [
+      {
+         "itemID": "123456",
+         "itemName": "Fake Product",
+         "qty": "5",
+         "cost": "100",
+         "currency": "GBP"
+      },
+      {
+         "itemID": "789",
+         "itemName": "Other Product",
+         "qty": "10",
+         "cost": "50",
+         "currency": "GBP"
+      }
+   ]
+  }
+}

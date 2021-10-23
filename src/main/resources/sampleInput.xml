@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PurchaseOrder>
+	<CustomerFirst>John</CustomerFirst>
+	<CustomerLast>Doe</CustomerLast>
+	<Company>Fake Company Pty Ltd</Company>
+	<ShippingAddress>
+		<ShippingAddressLine1>123 Fake St</ShippingAddressLine1>
+		<ShippingAddressLine2>Fake Building</ShippingAddressLine2>
+		<City>London</City>
+		<Postcode>UN0 0NO</Postcode>
+		<Country>UK</Country>
+	</ShippingAddress>
+	<PurchaseOrderLines>
+		<PurchaseOrderLine>
+			<itemID>123456</itemID>
+			<itemName>Fake Product</itemName>
+			<qty>5</qty>
+			<cost>100</cost>
+			<currency>GBP</currency>
+		</PurchaseOrderLine>
+		<PurchaseOrderLine>
+			<itemID>789</itemID>
+			<itemName>Other Product</itemName>
+			<qty>10</qty>
+			<cost>50</cost>
+			<currency>GBP</currency>
+		</PurchaseOrderLine>			
+	</PurchaseOrderLines>
+</PurchaseOrder>
