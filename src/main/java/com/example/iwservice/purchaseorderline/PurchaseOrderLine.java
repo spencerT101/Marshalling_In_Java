@@ -38,7 +38,7 @@ public class PurchaseOrderLine{
         this.itemName = itemName;
     }
 
-    public String getqty() {
+    public String getQty() {
         return qty;
     }
 

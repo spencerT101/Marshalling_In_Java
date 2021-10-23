@@ -9,7 +9,7 @@ public class PurchaseOrderLineTest {
     private PurchaseOrderLine purchaseOrderLine0;
     private String newItemID;
     private String newItemName;
-    private String qty;
+    private String newQty;
 
     @Before
     public void setUp(){
@@ -41,6 +41,13 @@ public class PurchaseOrderLineTest {
 
     @Test
     public void canGetQty(){
-        assertEquals("1", purchaseOrderLine0.getqty());
+        assertEquals("1", purchaseOrderLine0.getQty());
     }
+
+    @Test
+    public void canSetQty(){
+        newQty = "2";
+        purchaseOrderLine0.setQty(newQty);
+        assertEquals("2", purchaseOrderLine0.getQty());
+    };
 }
