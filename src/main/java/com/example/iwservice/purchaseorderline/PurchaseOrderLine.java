@@ -38,6 +38,7 @@ public class PurchaseOrderLine{
         this.itemName = itemName;
     }
 
+    @XmlElement(name = "qty")
     public String getQty() {
         return qty;
     }
