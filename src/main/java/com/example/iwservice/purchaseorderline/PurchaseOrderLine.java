@@ -8,9 +8,11 @@ public class PurchaseOrderLine{
 
 
     private String itemID;
+    private String itemName;
 
-    public PurchaseOrderLine(String itemID){
+    public PurchaseOrderLine(String itemID, String itemName){
         this.itemID = itemID;
+        this.itemName = itemName;
     }
 
     public PurchaseOrderLine(){
@@ -24,5 +26,13 @@ public class PurchaseOrderLine{
 
     public void setItemID(String newItemID) {
         this.itemID = newItemID;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
     }
 }

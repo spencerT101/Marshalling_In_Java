@@ -11,7 +11,7 @@ public class PurchaseOrderLineTest {
 
     @Before
     public void setUp(){
-        purchaseOrderLine0 = new PurchaseOrderLine("123456");
+        purchaseOrderLine0 = new PurchaseOrderLine("123456", "Fake Product");
     }
 
     @Test
@@ -24,5 +24,9 @@ public class PurchaseOrderLineTest {
         newItemID = "78910";
         purchaseOrderLine0.setItemID(newItemID);
         assertEquals("78910", purchaseOrderLine0.getItemID());
+    }
+    @Test
+    public void canGetItemName(){
+        assertEquals("Fake Product", purchaseOrderLine0.getItemName());
     }
 }
