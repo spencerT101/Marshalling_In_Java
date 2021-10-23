@@ -9,10 +9,11 @@ public class PurchaseOrderLineTest {
     private PurchaseOrderLine purchaseOrderLine0;
     private String newItemID;
     private String newItemName;
+    private String qty;
 
     @Before
     public void setUp(){
-        purchaseOrderLine0 = new PurchaseOrderLine("123456", "Fake Product");
+        purchaseOrderLine0 = new PurchaseOrderLine("123456", "Fake Product", "1");
     }
 
     @Test
@@ -36,5 +37,10 @@ public class PurchaseOrderLineTest {
         newItemName = "Counterfeit Product";
         purchaseOrderLine0.setItemName(newItemName);
         assertEquals("Counterfeit Product", purchaseOrderLine0.getItemName());
+    }
+
+    @Test
+    public void canGetQty(){
+        assertEquals("1", purchaseOrderLine0.getqty());
     }
 }

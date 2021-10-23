@@ -1,7 +1,7 @@
 package com.example.iwservice.purchaseorderline;
 
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlValue;
+
 
 
 public class PurchaseOrderLine{
@@ -9,10 +9,12 @@ public class PurchaseOrderLine{
 
     private String itemID;
     private String itemName;
+    private String qty;
 
-    public PurchaseOrderLine(String itemID, String itemName){
+    public PurchaseOrderLine(String itemID, String itemName, String qty){
         this.itemID = itemID;
         this.itemName = itemName;
+        this.qty = qty;
     }
 
     public PurchaseOrderLine(){
@@ -34,5 +36,13 @@ public class PurchaseOrderLine{
 
     public void setItemName(String itemName) {
         this.itemName = itemName;
+    }
+
+    public String getqty() {
+        return qty;
+    }
+
+    public void setQty(String qty) {
+        this.qty = qty;
     }
 }
