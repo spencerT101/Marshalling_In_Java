@@ -1,7 +1,6 @@
 package com.example.iwservice.purchaseorderdetail;
 import com.example.iwservice.purchaseorderline.PurchaseOrderLine;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 
 
@@ -31,4 +30,6 @@ public class PurchaseOrderDetail {
     public int getPurchaseOrderLineSize(){
         return this.purchaseOrderLine.size();
     }
+
+    public void addPurchaseLine(){}
 }

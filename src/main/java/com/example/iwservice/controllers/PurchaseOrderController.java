@@ -12,17 +12,17 @@ public class PurchaseOrderController {
     private OrderService orderService = new OrderService();
 
 
-    @RequestMapping(value = "/order/json")
-    public PurchaseOrder getPurchaseOrderJson(@RequestBody() PurchaseOrder purchaseOrder){
-        purchaseOrder =  orderService.upDatePurchaseOrderCost(purchaseOrder);
-        return purchaseOrder;
-    }
-
-    @RequestMapping(value = "/order/xml", produces = {MediaType.APPLICATION_XML_VALUE})
-    public PurchaseOrder getPurchaseOrderXml(@RequestBody() PurchaseOrder purchaseOrder){
-        purchaseOrder =  orderService.upDatePurchaseOrderCost(purchaseOrder);
-        return purchaseOrder;
-    }
+//    @RequestMapping(value = "/order/json")
+//    public PurchaseOrder getPurchaseOrderJson(@RequestBody() PurchaseOrder purchaseOrder){
+//        purchaseOrder =  orderService.upDatePurchaseOrderCost(purchaseOrder);
+//        return purchaseOrder;
+//    }
+//
+//    @RequestMapping(value = "/order/xml", produces = {MediaType.APPLICATION_XML_VALUE})
+//    public PurchaseOrder getPurchaseOrderXml(@RequestBody() PurchaseOrder purchaseOrder){
+//        purchaseOrder =  orderService.upDatePurchaseOrderCost(purchaseOrder);
+//        return purchaseOrder;
+//    }
 
 
 
