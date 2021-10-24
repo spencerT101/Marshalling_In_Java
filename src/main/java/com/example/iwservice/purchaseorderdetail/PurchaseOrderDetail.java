@@ -34,4 +34,8 @@ public class PurchaseOrderDetail {
     public void addPurchaseLine(PurchaseOrderLine purchaseOrderLine){
         this.purchaseOrderLine.add(purchaseOrderLine);
     }
+
+    public void removePurchaseLine(PurchaseOrderLine purchaseOrderLine){
+        this.purchaseOrderLine.remove(purchaseOrderLine);
+    }
 }
