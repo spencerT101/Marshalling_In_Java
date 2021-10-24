@@ -22,7 +22,7 @@ public class PurchaseOrderTest {
 
     @Before
     public void setup(){
-        purchaseOrder1 = new PurchaseOrder("John", "Doe", "Fake Company Pty Ltd", 2.00, shippingAddress1, purchaseOrderDetail1);
+        purchaseOrder1 = new PurchaseOrder("John", "Doe", "Fake Company Pty Ltd", shippingAddress1, purchaseOrderDetail1);
         shippingAddress1 = new ShippingAddress("123 Fake St", "Fake Building", "London", "UN0 0NO", "UK");
         purchaseOrderDetail1 = new PurchaseOrderDetail(purchaseOrderLine1);
         purchaseOrderLine1 = new PurchaseOrderLine("123456", "Fake Product","1", 100, "GBP");
@@ -62,18 +62,6 @@ public class PurchaseOrderTest {
         newCompanyName = "Quixotic Company";
         purchaseOrder1.setCompany(newCompanyName);
         assertEquals("Quixotic Company", purchaseOrder1.getCompany());
-    }
-
-    @Test
-    public void canGetPurchaseOrderOrderAmount(){
-        assertEquals(2.00, purchaseOrder1.getOrderAmount(), 0.00);
-    }
-
-    @Test
-    public void canSetPurchaseOrderOrderAmount(){
-        newOrderAmount = 10.00;
-        purchaseOrder1.setOrderAmount(newOrderAmount);
-        assertEquals(10.00,purchaseOrder1.getOrderAmount(),0.00);
     }
 
     @Test
