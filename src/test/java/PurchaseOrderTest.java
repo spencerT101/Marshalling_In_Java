@@ -84,6 +84,6 @@ public class PurchaseOrderTest {
     @Test
     public void canSetPurchaseOrderLineCost(){
         newCost1 = 150;
-        assertEquals("321 Fake St", purchaseOrder1.setPurchaseOrderLineCost(purchaseOrderLine1, newCost1));
+        assertEquals(150, purchaseOrder1.setPurchaseOrderLineCost(purchaseOrderLine1, newCost1),0.00);
     }
 }
