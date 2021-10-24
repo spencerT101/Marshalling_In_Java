@@ -31,5 +31,7 @@ public class PurchaseOrderDetail {
         return this.purchaseOrderLine.size();
     }
 
-    public void addPurchaseLine(){}
+    public void addPurchaseLine(PurchaseOrderLine purchaseOrderLine){
+        this.purchaseOrderLine.add(purchaseOrderLine);
+    }
 }

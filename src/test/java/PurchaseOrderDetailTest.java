@@ -24,7 +24,9 @@ public class PurchaseOrderDetailTest {
         assertEquals(0, purchaseOrderDetail.getPurchaseOrderLineSize());
     }
 
-
-
-
+    @Test
+    public void canAddPurchaseOrderLineToPurchaseOrderInfo(){
+        purchaseOrderDetail.addPurchaseLine(purchaseOrderLine1);
+        assertEquals(1, purchaseOrderDetail.getPurchaseOrderLineSize());
+    }
 }
