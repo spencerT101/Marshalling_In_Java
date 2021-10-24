@@ -11,6 +11,7 @@ public class PurchaseOrderLineTest {
     private String newItemName;
     private String newQty;
     private double newCost;
+    private String newCurrency;
 
     @Before
     public void setUp(){
@@ -67,6 +68,13 @@ public class PurchaseOrderLineTest {
     @Test
     public void canGetCurrency(){
         assertEquals("GBP", purchaseOrderLine0.getCurrency());
+    }
+
+    @Test
+    public void canSetCurrency(){
+        newCurrency = "EUR";
+        purchaseOrderLine0.setCurrency(newCurrency);
+        assertEquals("EUR", purchaseOrderLine0.getCurrency());
     }
 
 }
