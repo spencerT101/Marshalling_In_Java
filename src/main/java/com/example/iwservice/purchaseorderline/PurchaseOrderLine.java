@@ -49,6 +49,7 @@ public class PurchaseOrderLine{
         this.qty = qty;
     }
 
+    @XmlElement(name = "cost")
     public double getCost() {
         return cost;
     }
