@@ -5,6 +5,8 @@ import com.example.iwservice.shippingaddress.ShippingAddress;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.assertEquals;
 
 
@@ -17,13 +19,14 @@ public class PurchaseOrderTest {
     private String newLastName;
     private String newCompanyName;
     private double newCost1;
+    private ArrayList<PurchaseOrderLine> purchaseOrderLines;
 
 
     @Before
     public void setup(){
         purchaseOrder1 = new PurchaseOrder("John", "Doe", "Fake Company Pty Ltd", shippingAddress1, purchaseOrderDetail1);
         shippingAddress1 = new ShippingAddress("123 Fake St", "Fake Building", "London", "UN0 0NO", "UK");
-        purchaseOrderDetail1 = new PurchaseOrderDetail(purchaseOrderLine1);
+        purchaseOrderDetail1 = new PurchaseOrderDetail(purchaseOrderLines);
         purchaseOrderLine1 = new PurchaseOrderLine("123456", "Fake Product","1", 100, "GBP");
     }
 
