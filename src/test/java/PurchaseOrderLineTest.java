@@ -10,6 +10,7 @@ public class PurchaseOrderLineTest {
     private String newItemID;
     private String newItemName;
     private String newQty;
+    private double newCost;
 
     @Before
     public void setUp(){
@@ -54,5 +55,12 @@ public class PurchaseOrderLineTest {
     @Test
     public void canGetCost(){
         assertEquals(100, purchaseOrderLine0.getCost(), 0.00);
+    }
+
+    @Test
+    public void canSetCost(){
+        newCost = 150;
+        purchaseOrderLine0.setCost(newCost);
+        assertEquals(150, purchaseOrderLine0.getCost(),0.00);
     }
 }
