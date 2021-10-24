@@ -1,6 +1,7 @@
 package com.example.iwservice.controllers;
 import com.example.iwservice.purchaseorder.PurchaseOrder;
 import com.example.iwservice.orderservice.OrderService;
+import com.example.iwservice.purchaseorderline.PurchaseOrderLine;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PurchaseOrderController {
 
     private OrderService orderService = new OrderService();
+    private PurchaseOrderLine purchaseOrderLine;
 
 
     @RequestMapping(value = "/order/json")

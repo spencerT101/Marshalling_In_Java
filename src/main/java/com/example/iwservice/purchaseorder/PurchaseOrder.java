@@ -74,9 +74,9 @@ public class PurchaseOrder {
         return purchaseOrderLine.getCost();
     }
 
-    public double setPurchaseOrderLineCost(PurchaseOrderLine purchaseOrderLine, double newCost){
+    public void setPurchaseOrderLineCost(PurchaseOrderLine purchaseOrderLine, double newCost){
           purchaseOrderLine.setCost(newCost);
-          return getPurchaseOrderLineCost(purchaseOrderLine);
+
     }
 
     @XmlElement(name = "OrderAmount")
