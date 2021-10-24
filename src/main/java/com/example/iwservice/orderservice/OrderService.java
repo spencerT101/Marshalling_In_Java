@@ -5,7 +5,7 @@ import com.example.iwservice.purchaseorderline.PurchaseOrderLine;
 public class OrderService {
 
 
-    public PurchaseOrder upDateOrderAmount(PurchaseOrder purchaseOrder){
+    public PurchaseOrder upDatePurchaseOrderCost(PurchaseOrder purchaseOrder){
         PurchaseOrderLine purchaseOrderLine = purchaseOrder.getPurchaseOrderDetail().getPurchaseOrderLine();
         double updateCost = purchaseOrder.getPurchaseOrderLineCost(purchaseOrderLine);
         purchaseOrder.setPurchaseOrderLineCost(purchaseOrderLine, updateCost *1.23);

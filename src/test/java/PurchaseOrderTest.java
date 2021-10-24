@@ -16,7 +16,6 @@ public class PurchaseOrderTest {
     private String newFirstName;
     private String newLastName;
     private String newCompanyName;
-    private double newOrderAmount;
     private double newCost1;
 
 
