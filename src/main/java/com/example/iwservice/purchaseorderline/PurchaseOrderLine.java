@@ -60,6 +60,7 @@ public class PurchaseOrderLine{
         this.cost = cost;
     }
 
+    @XmlElement(name = "currency")
     public String getCurrency() {
         return currency;
     }
