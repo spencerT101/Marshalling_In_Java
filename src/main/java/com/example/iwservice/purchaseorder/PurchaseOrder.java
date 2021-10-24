@@ -4,6 +4,7 @@ import com.example.iwservice.purchaseorderline.PurchaseOrderLine;
 import com.example.iwservice.shippingaddress.ShippingAddress;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.ArrayList;
 
 @XmlRootElement
 public class PurchaseOrder {
@@ -68,7 +69,7 @@ public class PurchaseOrder {
         this.shippingAddress = shippingAddress;
     }
 
-    public  double getPurchaseOrderLineCost(PurchaseOrderLine purchaseOrderLine){
+    public  double getPurchaseOrderLineCost(ArrayList<PurchaseOrderLine>purchaseOrderLine){
         return purchaseOrderLine.getCost();
     }
 

@@ -8,18 +8,15 @@ public class PurchaseOrderDetail {
 
     private ArrayList <PurchaseOrderLine> purchaseOrderLine;
 
-
-
     public PurchaseOrderDetail(ArrayList purchaseOrderLine){
           this.purchaseOrderLine = new ArrayList<>();
-
     }
 
     public PurchaseOrderDetail(){
     };
 
     @XmlElement(name = "PurchaseOrderLine")
-    public ArrayList<PurchaseOrderLine> getPurchaseOrderLine() {
+    public ArrayList<PurchaseOrderLine> getPurchaseOrderLine(){
         return purchaseOrderLine;
     }
 
