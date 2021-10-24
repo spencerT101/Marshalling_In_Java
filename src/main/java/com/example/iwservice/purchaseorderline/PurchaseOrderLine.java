@@ -11,12 +11,14 @@ public class PurchaseOrderLine{
     private String itemName;
     private String qty;
     private double cost;
+    private String currency;
 
-    public PurchaseOrderLine(String itemID, String itemName, String qty, double cost){
+    public PurchaseOrderLine(String itemID, String itemName, String qty, double cost, String currency){
         this.itemID = itemID;
         this.itemName = itemName;
         this.qty = qty;
         this.cost= cost;
+        this.currency = currency;
     }
 
     public PurchaseOrderLine(){
@@ -57,4 +59,13 @@ public class PurchaseOrderLine{
     public void setCost(double cost) {
         this.cost = cost;
     }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
 }

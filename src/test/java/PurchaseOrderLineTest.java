@@ -14,7 +14,7 @@ public class PurchaseOrderLineTest {
 
     @Before
     public void setUp(){
-        purchaseOrderLine0 = new PurchaseOrderLine("123456", "Fake Product", "1", 100);
+        purchaseOrderLine0 = new PurchaseOrderLine("123456", "Fake Product", "1", 100, "GBP");
     }
 
     @Test
@@ -63,4 +63,10 @@ public class PurchaseOrderLineTest {
         purchaseOrderLine0.setCost(newCost);
         assertEquals(150, purchaseOrderLine0.getCost(),0.00);
     }
+
+    @Test
+    public void canGetCurrency(){
+        assertEquals("GBP", purchaseOrderLine0.getCurrency());
+    }
+
 }
