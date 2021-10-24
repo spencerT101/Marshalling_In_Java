@@ -17,7 +17,7 @@ public class PurchaseOrderTest {
     private String newLastName;
     private String newCompanyName;
     private double newOrderAmount;
-    private String newAddressLine1;
+    private double newCost1;
 
 
     @Before
@@ -77,13 +77,13 @@ public class PurchaseOrderTest {
     }
 
     @Test
-    public void canGetPurchaseOrderShippingAddressLine1(){
-        assertEquals("123 Fake St", purchaseOrder1.getPurchaseOrderShippingAddressLine1(shippingAddress1));
+    public void canGetPurchaseOrderLineCost(){
+        assertEquals(100, purchaseOrder1.getPurchaseOrderLineCost(purchaseOrderLine1),0.00);
     }
 
     @Test
-    public void canSetPurchaseOrderShippingAddressLine1(){
-        newAddressLine1 = "321 Fake St";
-        assertEquals("321 Fake St", purchaseOrder1.setPurchaseOrderShippingAddressLine1(shippingAddress1, newAddressLine1));
+    public void canSetPurchaseOrderLineCost(){
+        newCost1 = 150;
+        assertEquals("321 Fake St", purchaseOrder1.setPurchaseOrderLineCost(purchaseOrderLine1, newCost1));
     }
 }

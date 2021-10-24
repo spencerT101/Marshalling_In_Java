@@ -15,6 +15,7 @@ public class PurchaseOrder {
     private double orderAmount;
     private ShippingAddress shippingAddress;
     private PurchaseOrderDetail purchaseOrderDetail;
+    private PurchaseOrderLine purchaseOrderLine;
 
 
 
@@ -69,13 +70,13 @@ public class PurchaseOrder {
         this.shippingAddress = shippingAddress;
     }
 
-    public  String getPurchaseOrderShippingAddressLine1(ShippingAddress shippingAddress){
-        return shippingAddress.getShippingAddressLine1();
+    public  double getPurchaseOrderLineCost(PurchaseOrderLine purchaseOrderLine){
+        return purchaseOrderLine.getCost();
     }
 
-    public String setPurchaseOrderShippingAddressLine1(ShippingAddress shippingAddress, String newAddressLine1){
-          shippingAddress.setShippingAddressLine1(newAddressLine1);
-          return getPurchaseOrderShippingAddressLine1(shippingAddress);
+    public double setPurchaseOrderLineCost(PurchaseOrderLine purchaseOrderLine, double newCost){
+          purchaseOrderLine.setCost(newCost);
+          return getPurchaseOrderLineCost(purchaseOrderLine);
     }
 
     @XmlElement(name = "OrderAmount")
