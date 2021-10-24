@@ -13,7 +13,7 @@ public class PurchaseOrderLineTest {
 
     @Before
     public void setUp(){
-        purchaseOrderLine0 = new PurchaseOrderLine("123456", "Fake Product", "1");
+        purchaseOrderLine0 = new PurchaseOrderLine("123456", "Fake Product", "1", 100);
     }
 
     @Test
@@ -50,4 +50,9 @@ public class PurchaseOrderLineTest {
         purchaseOrderLine0.setQty(newQty);
         assertEquals("2", purchaseOrderLine0.getQty());
     };
+
+    @Test
+    public void canGetCost(){
+        assertEquals(100, purchaseOrderLine0.getCost(), 0.00);
+    }
 }
