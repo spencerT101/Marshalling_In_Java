@@ -36,4 +36,10 @@ public class PurchaseOrderDetail {
     public void removePurchaseLine(PurchaseOrderLine purchaseOrderLine){
         this.purchaseOrderLine.remove(purchaseOrderLine);
     }
+    public void GetArrayOfCosts(){
+        purchaseOrderLine.forEach(cost -> getPurchaseOrderLine().add(cost.getCost()));
+
+
+    }
+
 }

@@ -14,7 +14,7 @@ public class PurchaseOrderController {
 
     @RequestMapping(value = "/order/json")
     public PurchaseOrder getPurchaseOrderJson(@RequestBody() PurchaseOrder purchaseOrder){
-//        purchaseOrder =  orderService.upDatePurchaseOrderCost(purchaseOrder);
+        purchaseOrder =  orderService.upDatePurchaseOrderCost(purchaseOrder);
         return purchaseOrder;
     }
 //

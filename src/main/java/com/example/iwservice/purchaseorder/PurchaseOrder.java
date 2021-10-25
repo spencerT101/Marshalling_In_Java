@@ -68,14 +68,16 @@ public class PurchaseOrder {
     public void setShippingAddress(ShippingAddress shippingAddress) {
         this.shippingAddress = shippingAddress;
     }
-
-//    public  double getPurchaseOrderLineCost(ArrayList purchaseOrderLine){
-//        return ArrayList purchaseOrderLine.getCost();
+//
+//    public  double getPurchaseOrderLineCost(PurchaseOrderLine purchaseOrderLine){
+//         ArrayList cost = new ArrayList<>();
+//         double newCost = purchaseOrderLine.getCost();
+//         cost.add(newCost);
+//         return ArrayList cost;
 //    }
 //
-//    public void setPurchaseOrderLineCost(ArrayList purchaseOrderLine, double newCost){
+//    public void setPurchaseOrderLineCost(PurchaseOrderLine purchaseOrderLine, double newCost){
 //          purchaseOrderLine.setCost(newCost);
-//
 //    }
 
     @XmlElement(name = "PurchaseOrderDetail")
