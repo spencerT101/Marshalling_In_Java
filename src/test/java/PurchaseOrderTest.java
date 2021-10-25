@@ -66,15 +66,15 @@ public class PurchaseOrderTest {
         assertEquals("Quixotic Company", purchaseOrder1.getCompany());
     }
 
-    @Test
-    public void canGetPurchaseOrderLineCost(){
-        assertEquals(100, purchaseOrder1.getPurchaseOrderLineCost(purchaseOrderLine1),0.00);
-    }
-
-    @Test
-    public void canSetPurchaseOrderLineCost(){
-        newCost1 = 150;
-        purchaseOrder1.setPurchaseOrderLineCost(purchaseOrderLine1, newCost1);
-        assertEquals(150, purchaseOrder1.getPurchaseOrderLineCost(purchaseOrderLine1),0.00);
-    }
+//    @Test
+//    public void canGetPurchaseOrderLineCost(){
+//        assertEquals(100, purchaseOrder1.getPurchaseOrderLineCost(purchaseOrderLine1),0.00);
+//    }
+//
+//    @Test
+//    public void canSetPurchaseOrderLineCost(){
+//        newCost1 = 150;
+//        purchaseOrder1.setPurchaseOrderLineCost(purchaseOrderLine1, newCost1);
+//        assertEquals(150, purchaseOrder1.getPurchaseOrderLineCost(purchaseOrderLine1),0.00);
+//    }
 }
