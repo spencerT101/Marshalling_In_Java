@@ -24,9 +24,10 @@ public class PurchaseOrderDetail {
         this.purchaseOrderLine = purchaseOrderLine;
     }
 
-//    public int getPurchaseOrderLineSize(){
-//        return this.purchaseOrderLine.size();
-//    }
+
+    public int getPurchaseOrderLineSize(){
+        return this.purchaseOrderLine.size();
+    }
 
     public void addPurchaseLine(PurchaseOrderLine purchaseOrderLine){
         this.purchaseOrderLine.add(purchaseOrderLine);
