@@ -69,15 +69,6 @@ public class PurchaseOrder {
         this.shippingAddress = shippingAddress;
     }
 
-//    public  double getPurchaseOrderLineCost(ArrayList<PurchaseOrderLine>purchaseOrderLine){
-//        return purchaseOrderLine.getCost();
-//    }
-
-    public void setPurchaseOrderLineCost(PurchaseOrderLine purchaseOrderLine, double newCost){
-          purchaseOrderLine.setCost(newCost);
-
-    }
-
     @XmlElement(name = "PurchaseOrderDetail")
     public PurchaseOrderDetail getPurchaseOrderDetail(){
         return purchaseOrderDetail;

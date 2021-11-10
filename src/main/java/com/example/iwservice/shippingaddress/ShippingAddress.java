@@ -3,8 +3,7 @@ import javax.xml.bind.annotation.XmlElement;
 
 
 public class ShippingAddress {
-
-
+    
     private String shippingAddressLine1;
     private String shippingAddressLine2;
     private String city;
