@@ -18,11 +18,11 @@ public class PurchaseOrderController {
         return purchaseOrder;
     }
 //
-//    @RequestMapping(value = "/order/xml", produces = {MediaType.APPLICATION_XML_VALUE})
-//    public PurchaseOrder getPurchaseOrderXml(@RequestBody() PurchaseOrder purchaseOrder){
+    @RequestMapping(value = "/order/xml", produces = {MediaType.APPLICATION_XML_VALUE})
+    public PurchaseOrder getPurchaseOrderXml(@RequestBody() PurchaseOrder purchaseOrder){
 //        purchaseOrder =  orderService.upDatePurchaseOrderCost(purchaseOrder);
-//        return purchaseOrder;
-//    }
+        return purchaseOrder;
+    }
 
 
 
