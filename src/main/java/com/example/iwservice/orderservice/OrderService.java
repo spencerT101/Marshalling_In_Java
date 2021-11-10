@@ -7,6 +7,13 @@ import java.util.ArrayList;
 
 public class OrderService {
 
+    public PurchaseOrder upDatePurchaseOrderCost(PurchaseOrder purchaseOrder){
+        ArrayList<PurchaseOrderLine> purchaseOrderLine1 = purchaseOrder.getPurchaseOrderDetail().getPurchaseOrderLine();
+        purchaseOrderLine1.forEach((purchaseOrderLine) -> purchaseOrderLine.setCost(purchaseOrderLine.getCost() * 1.23));
+        return purchaseOrder;
+    }
+
+
 
 //    public PurchaseOrder upDatePurchaseOrderCost(PurchaseOrder purchaseOrder){
 //        ArrayList <PurchaseOrderLine> purchaseOrderLine1 = purchaseOrder.getPurchaseOrderDetail().getPurchaseOrderLine();
