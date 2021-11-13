@@ -14,13 +14,13 @@ import java.io.IOException;
 public class PurchaseOrderController {
 
     private OrderService orderService = new OrderService();
-    private SchemaValidation schemaValidation;
+    private SchemaValidation schemaValidation = new SchemaValidation();
     private String validationFile = "schema.xsd";
 
 
     @RequestMapping(value = "/order/json")
     public PurchaseOrder getPurchaseOrderJson(@RequestBody() PurchaseOrder purchaseOrder) throws IOException, SAXException {
-        schemaValidation.validate( "PurchaseOrder", "resources/schema.xsd");
+        schemaValidation.validate( "PurchaseOrder", "src/main/resources/schema.xsd");
         purchaseOrder =  orderService.upDatePurchaseOrderCost(purchaseOrder);
         return purchaseOrder;
     }
