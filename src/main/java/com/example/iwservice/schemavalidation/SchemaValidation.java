@@ -15,7 +15,7 @@ public class SchemaValidation {
 
     public static void main(String[] args) {
         try{
-            validate("schema.xsd", "PurchaseOrder.xml");
+            validate("resources/schema.xsd", "PurchaseOrder.xml");
         } catch (SAXException e){
             e.printStackTrace();
         } catch(IOException e) {
