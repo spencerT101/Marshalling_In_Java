@@ -13,18 +13,19 @@ import java.io.IOException;
 
 public class SchemaValidation {
 
-    String xsdFilePath = "schema.xsd";
-    String xmlFilePath = "/order";
-
-    public static boolean validatePurchaseOrderXMLAgainstSchema(String xsdFilePath, String xmlFilePath ){
-        try {
-            SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-            Schema schema = factory.newSchema(new File(xsdFilePath));
-            Validator validator = schema.newValidator();
-            validator.validate(new StreamSource(new File(xmlFilePath)));
-        } catch (IOException | SAXException e){
-            return false;
+    public static void main(String[] args) {
+        try{
+            validate("schema.xsd", "PurchaseOrder.xml");
+        } catch (SAXException e){
+            e.printStackTrace();
+        } catch(IOException e) {
+            e.printStackTrace();
         }
-        return true;
-    };
+    }
+
+    public static void validate(String xmlFile, String validationFile) throws SAXException, IOException {
+        SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+        schemaFactory.newSchema(new File(validationFile)).newValidator().validate(new StreamSource(new File(xmlFile)));
+    }
+
 }
