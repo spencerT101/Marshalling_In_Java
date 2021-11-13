@@ -20,7 +20,7 @@ public class PurchaseOrderController {
 
     @RequestMapping(value = "/order/json")
     public PurchaseOrder getPurchaseOrderJson(@RequestBody() PurchaseOrder purchaseOrder) throws IOException, SAXException {
-        schemaValidation.validate( "PurchaseOrder", "src/main/resources/schema.xsd");
+        schemaValidation.validate( "/order/json/purchaseOrder.xml", "src/main/resources/schema.xsd");
         purchaseOrder =  orderService.upDatePurchaseOrderCost(purchaseOrder);
         return purchaseOrder;
     }
