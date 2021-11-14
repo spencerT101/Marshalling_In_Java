@@ -17,10 +17,10 @@ public class PurchaseOrderController {
     private SchemaValidation schemaValidation = new SchemaValidation();
     private String validationFile = "schema.xsd";
 
-
     @RequestMapping(value = "/order/json")
     public PurchaseOrder getPurchaseOrderJson(@RequestBody() PurchaseOrder purchaseOrder) throws IOException, SAXException {
-        schemaValidation.validate( "/order/json/purchaseOrder.xml", "src/main/resources/schema.xsd");
+        String purchaseOrderFile = purchaseOrder.toString();
+        schemaValidation.validate( purchaseOrderFile, "src/main/resources/schema.xsd");
         purchaseOrder =  orderService.upDatePurchaseOrderCost(purchaseOrder);
         return purchaseOrder;
     }
