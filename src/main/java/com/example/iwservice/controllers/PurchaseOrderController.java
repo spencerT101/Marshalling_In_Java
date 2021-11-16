@@ -4,6 +4,7 @@ import com.example.iwservice.orderservice.OrderService;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -12,7 +13,7 @@ public class PurchaseOrderController {
     private OrderService orderService = new OrderService();
 
 
-    @RequestMapping(value = "/order/json")
+    @RequestMapping(value = "/order/json", method = {RequestMethod.POST})
     public PurchaseOrder getPurchaseOrderJson(@RequestBody() PurchaseOrder purchaseOrder){
         purchaseOrder =  orderService.upDatePurchaseOrderCost(purchaseOrder);
         return purchaseOrder;
