@@ -19,7 +19,7 @@ public class PurchaseOrderController {
         return purchaseOrder;
     }
 
-    @RequestMapping(value = "/order/xml", produces = {MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping(value = "/order/xml", method = {RequestMethod.POST}, produces = {MediaType.APPLICATION_XML_VALUE})
     public PurchaseOrder getPurchaseOrderXml(@RequestBody() PurchaseOrder purchaseOrder){
         purchaseOrder =  orderService.upDatePurchaseOrderCost(purchaseOrder);
         return purchaseOrder;
