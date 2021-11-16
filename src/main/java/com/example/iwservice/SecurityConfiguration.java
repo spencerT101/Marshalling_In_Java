@@ -1,6 +1,5 @@
 package com.example.iwservice;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -30,6 +29,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .password("{noop}Admin1234")
                 .roles("ADMIN")
                 .and()
-               .withUser("user").password("{noop}User1234").roles("USER");
+                .withUser("user")
+                .password("{noop}User1234")
+                .roles("USER");
     }
 }
