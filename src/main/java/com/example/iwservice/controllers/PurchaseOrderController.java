@@ -2,6 +2,7 @@ package com.example.iwservice.controllers;
 import com.example.iwservice.purchaseorder.PurchaseOrder;
 import com.example.iwservice.orderservice.OrderService;
 import com.example.iwservice.schemavalidation.SchemaValidation;
+import com.example.iwservice.xmlorderunmarshaller.XmlOrderUnmarshaller;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,7 @@ public class PurchaseOrderController {
 
     private OrderService orderService = new OrderService();
     private SchemaValidation schemaValidation = new SchemaValidation();
+    private XmlOrderUnmarshaller xmlOrderUnmarshaller = new XmlOrderUnmarshaller();
     private String validationFile = "schema.xsd";
 
     @RequestMapping(value = "/order/json")
@@ -26,12 +28,14 @@ public class PurchaseOrderController {
 
 
         schemaValidation.validate( purchaseOrderRaw, "src/main/resources/schema.xsd");
+//
+//        JAXBContext jc = JAXBContext.newInstance(PurchaseOrder.class);
+//
+//        Unmarshaller unmarshaller = jc.createUnmarshaller();
+//
+//        PurchaseOrder purchaseOrder = (PurchaseOrder) unmarshaller.unmarshal(new StringReader(purchaseOrderRaw));
 
-        JAXBContext jc = JAXBContext.newInstance(PurchaseOrder.class);
-
-        Unmarshaller unmarshaller = jc.createUnmarshaller();
-
-        PurchaseOrder purchaseOrder = (PurchaseOrder) unmarshaller.unmarshal(new StringReader(purchaseOrderRaw));
+        PurchaseOrder purchaseOrder = xmlOrderUnmarshaller.unmarshal(purchaseOrderRaw);
 
         orderService.upDatePurchaseOrderCost(purchaseOrder);
         return purchaseOrder;
