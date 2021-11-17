@@ -21,22 +21,12 @@ public class PurchaseOrderController {
     private OrderService orderService = new OrderService();
     private SchemaValidation schemaValidation = new SchemaValidation();
     private XmlOrderUnmarshaller xmlOrderUnmarshaller = new XmlOrderUnmarshaller();
-    private String validationFile = "schema.xsd";
+
 
     @RequestMapping(value = "/order/json")
     public PurchaseOrder getPurchaseOrderJson(@RequestBody() String purchaseOrderRaw) throws JAXBException, IOException, SAXException {
-
-
-        schemaValidation.validate( purchaseOrderRaw, "src/main/resources/schema.xsd");
-//
-//        JAXBContext jc = JAXBContext.newInstance(PurchaseOrder.class);
-//
-//        Unmarshaller unmarshaller = jc.createUnmarshaller();
-//
-//        PurchaseOrder purchaseOrder = (PurchaseOrder) unmarshaller.unmarshal(new StringReader(purchaseOrderRaw));
-
+//        schemaValidation.validate( purchaseOrderRaw, "src/main/resources/schema.xsd");
         PurchaseOrder purchaseOrder = xmlOrderUnmarshaller.unmarshal(purchaseOrderRaw);
-
         orderService.upDatePurchaseOrderCost(purchaseOrder);
         return purchaseOrder;
     }
