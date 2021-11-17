@@ -8,7 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.xml.sax.SAXException;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
 import java.io.IOException;
+import java.io.StringReader;
 
 @RestController
 public class PurchaseOrderController {
@@ -18,12 +22,18 @@ public class PurchaseOrderController {
     private String validationFile = "schema.xsd";
 
     @RequestMapping(value = "/order/json")
-    public String getPurchaseOrderJson(@RequestBody() String purchaseOrderRaw) throws IOException, SAXException {
+    public PurchaseOrder getPurchaseOrderJson(@RequestBody() String purchaseOrderRaw) throws JAXBException, IOException, SAXException {
 
 
         schemaValidation.validate( purchaseOrderRaw, "src/main/resources/schema.xsd");
-        PurchaseOrder purchaseOrder =
-                orderService.upDatePurchaseOrderCost(purchaseOrder);
+
+        JAXBContext jc = JAXBContext.newInstance(PurchaseOrder.class);
+
+        Unmarshaller unmarshaller = jc.createUnmarshaller();
+
+        PurchaseOrder purchaseOrder = (PurchaseOrder) unmarshaller.unmarshal(new StringReader(purchaseOrderRaw));
+
+        orderService.upDatePurchaseOrderCost(purchaseOrder);
         return purchaseOrder;
     }
 
