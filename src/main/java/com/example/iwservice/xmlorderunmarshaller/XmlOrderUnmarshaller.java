@@ -10,14 +10,9 @@ import java.io.StringReader;
 public class XmlOrderUnmarshaller {
 
     public PurchaseOrder unmarshal(String purchaseOrderRaw) throws JAXBException {
-
-
         JAXBContext jc = JAXBContext.newInstance(PurchaseOrder.class);
-
         Unmarshaller unmarshaller = jc.createUnmarshaller();
-
         PurchaseOrder purchaseOrder = (PurchaseOrder) unmarshaller.unmarshal(new StringReader(purchaseOrderRaw));
-
         return purchaseOrder;
     }
 }
