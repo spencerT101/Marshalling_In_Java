@@ -25,15 +25,17 @@ public class PurchaseOrderController {
 
     @RequestMapping(value = "/order/json")
     public PurchaseOrder getPurchaseOrderJson(@RequestBody() String purchaseOrderRaw) throws JAXBException, IOException, SAXException {
-//        schemaValidation.validate( purchaseOrderRaw, "src/main/resources/schema.xsd");
+        schemaValidation.validate( purchaseOrderRaw, "src/main/resources/schema.xsd");
         PurchaseOrder purchaseOrder = xmlOrderUnmarshaller.unmarshal(purchaseOrderRaw);
         orderService.upDatePurchaseOrderCost(purchaseOrder);
         return purchaseOrder;
     }
 
     @RequestMapping(value = "/order/xml", produces = {MediaType.APPLICATION_XML_VALUE})
-    public PurchaseOrder getPurchaseOrderXml(@RequestBody() PurchaseOrder purchaseOrder){
-        purchaseOrder =  orderService.upDatePurchaseOrderCost(purchaseOrder);
+    public PurchaseOrder getPurchaseOrderXml(@RequestBody() String purchaseOrderRaw) throws JAXBException, IOException, SAXException {
+        schemaValidation.validate( purchaseOrderRaw, "src/main/resources/schema.xsd");
+        PurchaseOrder purchaseOrder = xmlOrderUnmarshaller.unmarshal(purchaseOrderRaw);
+        orderService.upDatePurchaseOrderCost(purchaseOrder);
         return purchaseOrder;
     }
 }
