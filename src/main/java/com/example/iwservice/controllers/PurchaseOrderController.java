@@ -19,6 +19,7 @@ public class PurchaseOrderController {
     private SchemaValidation schemaValidation = new SchemaValidation();
     private XmlOrderUnmarshaller xmlOrderUnmarshaller = new XmlOrderUnmarshaller();
 
+
     @RequestMapping(value = "/order/json", method = RequestMethod.POST)
     public PurchaseOrder getPurchaseOrderJson(@RequestBody() String purchaseOrderRaw) throws JAXBException, IOException, SAXException {
         schemaValidation.validate( purchaseOrderRaw, "src/main/resources/schema.xsd");
