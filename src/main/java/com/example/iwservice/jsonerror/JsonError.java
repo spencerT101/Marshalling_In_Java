@@ -5,13 +5,21 @@ import java.util.Map;
 public class JsonError {
 
     private Integer code;
-    private String message;
+    private  String message;
 
-    public JsonError(int code, Map<String, Object> errorAttributes){
+    public JsonError(Integer  code, final String message){
         this.code = code;
-        this.message = (String) errorAttributes.get("message");
+        this.message = message;
 
     }
+
+    public static JsonError froDefaultAttributeMap(final Map<String, Object> defaultErrorAttributes){
+        return new JsonError(
+                ((Integer) defaultErrorAttributes.get("status")),
+                (String) defaultErrorAttributes.getOrDefault("message", "Operation not found")
+        );
+
+    };
 
     public Integer getCode() {
         return code;

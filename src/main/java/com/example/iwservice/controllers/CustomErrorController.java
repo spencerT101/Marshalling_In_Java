@@ -15,27 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 @RestController
-public class CustomErrorController implements ErrorController {
+public class CustomErrorController  {
 
-    private static final String PATH = "/error";
 
-    @Value("$(debug)")
-    private boolean debug;
-
-    @Autowired
-    private ErrorAttributes errorAttributes;
-
-    @RequestMapping(value = PATH)
-    public JsonError error(HttpServletRequest request, HttpServletResponse response){
-        return new JsonError(response.getStatus(), errorAttributes.getErrorAttributes(request, debug));
     }
 
-    @Override
-    public String getErrorPath(){
-        return PATH;
-    }
-    private Map<String, Object> getErrorAttributes(HttpServletRequest request){
-        RequestAttributes requestAttributes = new ServletRequestAttributes(request);
-        return errorAttributes.getErrorAttributes(requestAttributes);
-    }
-}
