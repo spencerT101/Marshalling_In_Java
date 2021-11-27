@@ -16,7 +16,7 @@ public class JsonError {
     public static JsonError froDefaultAttributeMap(final Map<String, Object> defaultErrorAttributes){
         return new JsonError(
                 ((Integer) defaultErrorAttributes.get("status")),
-                (String) defaultErrorAttributes.getOrDefault("message", "Operation not found")
+                (String) defaultErrorAttributes.getOrDefault("message", "no message available")
         );
 
     };
