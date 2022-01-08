@@ -1,16 +1,18 @@
 package com.example.iwservice.controllers;
+import com.example.iwservice.jsonerror.JsonError;
 import com.example.iwservice.purchaseorder.PurchaseOrder;
 import com.example.iwservice.orderservice.OrderService;
 import com.example.iwservice.schemavalidation.SchemaValidation;
 import com.example.iwservice.xmlorderunmarshaller.XmlOrderUnmarshaller;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.xml.sax.SAXException;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.xml.bind.JAXBException;
 import java.io.IOException;
+import java.util.NoSuchElementException;
 
 @RestController
 public class PurchaseOrderController {
@@ -18,6 +20,7 @@ public class PurchaseOrderController {
     private OrderService orderService = new OrderService();
     private SchemaValidation schemaValidation = new SchemaValidation();
     private XmlOrderUnmarshaller xmlOrderUnmarshaller = new XmlOrderUnmarshaller();
+
 
 
     @RequestMapping(value = "/order/json", method = RequestMethod.POST)
@@ -35,4 +38,12 @@ public class PurchaseOrderController {
         orderService.upDatePurchaseOrderCost(purchaseOrder);
         return purchaseOrder;
     }
+
+//    @ExceptionHandler(NoSuchElementException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public JsonError handleNoSuchElementException(NoSuchElementException exception){
+        JsonError error = new JsonError(404, "Operation not found");
+        return error;
+    }
+
 }
