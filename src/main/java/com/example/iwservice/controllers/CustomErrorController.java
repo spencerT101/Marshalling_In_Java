@@ -23,7 +23,7 @@ public class CustomErrorController implements ErrorController {
     @RequestMapping("src/resources")
     public String handleError(HttpServletRequest request, Model model){
 
-        String PATH = "src/main/resources/sample404ErrorOutput.json";
+         String  PATH = "src/main/resources/sample404ErrorOutput.json";
 
         Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
 
