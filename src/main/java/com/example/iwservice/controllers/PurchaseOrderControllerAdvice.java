@@ -1,31 +1,32 @@
 package com.example.iwservice.controllers;
 import javax.servlet.RequestDispatcher;
-        import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest;
 
-        import org.springframework.http.HttpStatus;
-        import org.springframework.http.ResponseEntity;
-        import org.springframework.web.bind.annotation.ControllerAdvice;
-        import org.springframework.web.bind.annotation.ExceptionHandler;
-        import org.springframework.web.bind.annotation.ResponseBody;
+import com.example.iwservice.purchaseorder.PurchaseOrder;
+import org.springframework.boot.web.servlet.error.ErrorController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.NoHandlerFoundException;
-import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
 @ControllerAdvice()
-public class PurchaseOrderControllerAdvice {
+public class PurchaseOrderControllerAdvice implements ErrorController {
 
-//    @ResponseBody
-//    @Override
+    PurchaseOrderController purchaseOrderController = new PurchaseOrderController();
+
     @ExceptionHandler(NoHandlerFoundException.class)
     public ResponseEntity<?> handleNoHandlerFoundException(HttpServletRequest request, Throwable ex) throws IOException {
         HttpStatus status = getStatus(request);
+       if(status == HttpStatus.NOT_FOUND){
         String PATH = "src/main/resources/sample404ErrorOutput.json";
         String content = new String ( Files.readAllBytes( Paths.get(PATH) ) );
         return new ResponseEntity<>(content, status);
+   }
+        return null;
     }
 
     private HttpStatus getStatus(HttpServletRequest request) {
