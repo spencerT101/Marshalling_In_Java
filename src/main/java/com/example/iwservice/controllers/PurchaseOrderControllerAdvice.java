@@ -3,6 +3,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 
 import com.example.iwservice.purchaseorder.PurchaseOrder;
+import com.example.iwservice.schemavalidation.SchemaValidation;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +27,16 @@ public class PurchaseOrderControllerAdvice implements ErrorController {
         String content = new String (Files.readAllBytes(Paths.get(PATH)));
         return new ResponseEntity<>(content, status);
         }
-        return     ;
+//        else if (status == HttpStatus.INTERNAL_SERVER_ERROR){
+//
+//            String error =  "{" +
+//                    "There has been a schema validation error" +
+//                    "}";
+//
+//            return new ResponseEntity<>(error, status);
+//        }
+        
+        return new ResponseEntity<>(status);
    }
 
     private HttpStatus getStatus(HttpServletRequest request) {
