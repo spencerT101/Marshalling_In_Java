@@ -38,7 +38,6 @@ public class PurchaseOrderControllerAdvice implements ErrorController {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-
     private HttpStatus getStatus(HttpServletRequest request) {
         Integer code = (Integer) request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
         HttpStatus status = HttpStatus.resolve(code);
