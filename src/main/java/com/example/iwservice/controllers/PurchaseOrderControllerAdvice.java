@@ -2,15 +2,20 @@ package com.example.iwservice.controllers;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.bind.JAXBException;
 
 import com.example.iwservice.purchaseorder.PurchaseOrder;
 import com.example.iwservice.schemavalidation.SchemaValidation;
+import com.example.iwservice.xmlorderunmarshaller.XmlOrderUnmarshaller;
+import com.sun.xml.internal.ws.handler.HandlerException;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.NoHandlerFoundException;
+import org.xml.sax.SAXException;
+
 import java.io.IOException;
 import java.io.ObjectInput;
 import java.nio.file.Files;
@@ -20,22 +25,19 @@ import java.nio.file.Paths;
 @ControllerAdvice()
 public class PurchaseOrderControllerAdvice implements ErrorController {
 
-
+//    @RequestMapping(method = RequestMethod.POST)
     @ExceptionHandler({NoHandlerFoundException.class})
     public ResponseEntity<Object> handleNoHandlerFoundException(HttpServletRequest request, Throwable ex) throws IOException {
         HttpStatus status = getStatus(request);
-        HttpStatus notFound = HttpStatus.NOT_FOUND;
-        HttpStatus internalServerError = HttpStatus.INTERNAL_SERVER_ERROR;
-        if (status == notFound) {
-            String PATH = "src/main/resources/sample404ErrorOutput.json";
-            String content = new String(Files.readAllBytes(Paths.get(PATH)));
-            return new ResponseEntity<>(content, notFound);
-        }
-
-        else  {
-        return new ResponseEntity<>(ex, status);
-        }
-
+//        HttpStatus notFound = HttpStatus.NOT_FOUND;
+//        if (status == notFound) {
+        String PATH = "src/main/resources/sample404ErrorOutput.json";
+        String content = new String(Files.readAllBytes(Paths.get(PATH)));
+        return new ResponseEntity<>(content, status);
+    }
+    @ExceptionHandler({Exception.class})
+        public ResponseEntity <Object> handleException(Exception ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
 
