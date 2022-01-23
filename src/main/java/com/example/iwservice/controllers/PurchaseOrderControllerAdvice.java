@@ -25,12 +25,10 @@ import java.nio.file.Paths;
 @ControllerAdvice()
 public class PurchaseOrderControllerAdvice implements ErrorController {
 
-//    @RequestMapping(method = RequestMethod.POST)
+
     @ExceptionHandler({NoHandlerFoundException.class})
     public ResponseEntity<Object> handleNoHandlerFoundException(HttpServletRequest request, Throwable ex) throws IOException {
         HttpStatus status = getStatus(request);
-//        HttpStatus notFound = HttpStatus.NOT_FOUND;
-//        if (status == notFound) {
         String PATH = "src/main/resources/sample404ErrorOutput.json";
         String content = new String(Files.readAllBytes(Paths.get(PATH)));
         return new ResponseEntity<>(content, status);
