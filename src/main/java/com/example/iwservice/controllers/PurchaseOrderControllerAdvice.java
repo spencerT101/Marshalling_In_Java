@@ -17,21 +17,25 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 
-@ControllerAdvice
+@ControllerAdvice()
 public class PurchaseOrderControllerAdvice implements ErrorController {
-    
+
+
     @ExceptionHandler({NoHandlerFoundException.class})
-    public ResponseEntity<?> handleNoHandlerFoundException(HttpServletRequest request, Throwable ex) throws IOException {
-            HttpStatus status = getStatus(request);
-            HttpStatus notFound = HttpStatus.NOT_FOUND;
-       if (status == notFound) {
+    public ResponseEntity<Object> handleNoHandlerFoundException(HttpServletRequest request, Throwable ex) throws IOException {
+        HttpStatus status = getStatus(request);
+        HttpStatus notFound = HttpStatus.NOT_FOUND;
+        HttpStatus internalServerError = HttpStatus.INTERNAL_SERVER_ERROR;
+        if (status == notFound) {
             String PATH = "src/main/resources/sample404ErrorOutput.json";
             String content = new String(Files.readAllBytes(Paths.get(PATH)));
             return new ResponseEntity<>(content, notFound);
         }
-        HttpStatus errorStatus = getStatus(request);
-//       Throwable message = ex;
-       return new ResponseEntity<>(errorStatus);
+
+        else  {
+        return new ResponseEntity<>(ex, status);
+        }
+
     }
 
 
