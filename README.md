@@ -19,13 +19,13 @@ The final solution satisfies each MVP requirement.
 
 ### Class Diagram
 
-![marshalling-service-class-diagram](https://user-images.githubusercontent.com/48687748/150876883-9363861f-e560-45cf-864e-0c53b7cd455c.png)
+<img width="800" alt="Screenshot 2022-01-24 at 23 30 26" src="https://user-images.githubusercontent.com/48687748/150882482-6104d615-0ed9-4efd-96fb-b287ff5f72b4.png">
 
 <br>
 <br>
 <br>
 
-### 201 Created - Successfully unmarshalled XML input to JSON output using query parameter +  with cost * 1.23  
+### 201 Created - Successfully authenticated, validated, unmarshalled XML input to JSON output using query parameter +  with cost * 1.23  
 
 <img width="800" alt="Screenshot 2022-01-24 at 23 03 45" src="https://user-images.githubusercontent.com/48687748/150879603-1714e9dc-03a2-4d60-90d9-2ebe8814a900.png">
 
@@ -36,3 +36,23 @@ The final solution satisfies each MVP requirement.
 ### 500 Internal Server Error - Schema validation error
 
 <img width="800" alt="Screenshot 2022-01-24 at 23 07 04" src="https://user-images.githubusercontent.com/48687748/150879996-721e6a5d-435a-4669-a47f-86f1db9be2c0.png">
+
+<br>
+<br>
+<br>
+
+### 404 Not Found - Custom error message
+
+<img width="800" alt="Screenshot 2022-01-24 at 23 23 14" src="https://user-images.githubusercontent.com/48687748/150881733-5cded31c-7c8f-4b96-aed3-62c2bdb38ddf.png">
+
+<br>
+<br>
+<br>
+
+### 401 Unauthorised - Incorrect username and password
+
+<img width="800" alt="Screenshot 2022-01-24 at 23 27 14" src="https://user-images.githubusercontent.com/48687748/150882171-65ad3851-d2df-4149-9418-583f0b3f2ded.png">
+
+<br>
+<br>
+<br>
