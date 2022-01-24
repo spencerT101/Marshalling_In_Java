@@ -25,4 +25,4 @@ The final solution satisfies each MVP requirement.
 
 ## 500 Internal Server Error - Schema validation error
 
-
+<img width="940" alt="Screenshot 2022-01-24 at 23 07 04" src="https://user-images.githubusercontent.com/48687748/150879996-721e6a5d-435a-4669-a47f-86f1db9be2c0.png">
