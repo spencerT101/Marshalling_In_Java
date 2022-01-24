@@ -15,5 +15,9 @@ The final solution satisfies each MVP requirement.
 
 #Screenshots
 
+##Class Diagram
 
+![marshalling-service-class-diagram](https://user-images.githubusercontent.com/48687748/150876883-9363861f-e560-45cf-864e-0c53b7cd455c.png)
+
+## 200K Request - succ
 
