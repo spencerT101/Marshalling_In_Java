@@ -2,8 +2,11 @@ package com.example.iwservice.purchaseorder;
 import com.example.iwservice.purchaseorderdetail.PurchaseOrderDetail;
 import com.example.iwservice.purchaseorderline.PurchaseOrderLine;
 import com.example.iwservice.shippingaddress.ShippingAddress;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import java.util.ArrayList;
 
 @XmlRootElement(name = "PurchaseOrder")
@@ -68,6 +71,7 @@ public class PurchaseOrder {
     public void setShippingAddress(ShippingAddress shippingAddress) {
         this.shippingAddress = shippingAddress;
     }
+
 
     @XmlElement(name = "PurchaseOrderDetail")
     public PurchaseOrderDetail getPurchaseOrderDetail(){

@@ -34,7 +34,7 @@ public class PurchaseOrderControllerAdvice implements ErrorController {
         return new ResponseEntity<>(content, status);
     }
     @ExceptionHandler({Exception.class})
-        public ResponseEntity <Object> handleException(Exception ex) {
+        public ResponseEntity <Object> handleException(Exception ex){
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 

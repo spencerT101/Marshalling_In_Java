@@ -1,5 +1,7 @@
 package com.example.iwservice.purchaseorderline;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.xml.bind.annotation.XmlElement;
 
 
