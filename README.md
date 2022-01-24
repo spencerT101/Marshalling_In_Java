@@ -19,5 +19,10 @@ The final solution satisfies each MVP requirement.
 
 ![marshalling-service-class-diagram](https://user-images.githubusercontent.com/48687748/150876883-9363861f-e560-45cf-864e-0c53b7cd455c.png)
 
-## 200K Request - succ
+## 201 Created - Successfully unmarshalled XML input to JSON output using query parameter +  with cost * 1.23  
+
+<img width="939" alt="Screenshot 2022-01-24 at 23 03 45" src="https://user-images.githubusercontent.com/48687748/150879603-1714e9dc-03a2-4d60-90d9-2ebe8814a900.png">
+
+## 500 Internal Server Error - Schema validation error
+
 
