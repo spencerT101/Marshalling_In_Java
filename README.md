@@ -56,3 +56,19 @@ The final solution satisfies each MVP requirement.
 <br>
 <br>
 <br>
+
+## Installation and set up...
+
+- Clone the repository and open in your chosen IDE.
+- In your chosen API client create a POST request.
+- Set url to localhost:8080/order/"query-parameter" select either "order/json" or "order/xml" for query parameter.
+- In the resources folder look for "sampleInput.xml" file and copy contents into body of the POST request.
+- Set authentication type to BASIC AUTH : 
+  <br>
+  Username: admin 
+  <br>
+  Password: password
+  <br>
+- In your IDE run the service and send the POST request.
+- For reference, schema.xsd and sample404ErrorOutput.json files can be found in resources folder.
+
