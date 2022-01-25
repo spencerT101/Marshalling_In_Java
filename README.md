@@ -72,6 +72,8 @@ The final solution satisfies each MVP requirement.
 - In your IDE run the service and send the POST request.
 - For reference, schema.xsd and sample404ErrorOutput.json files can be found in resources folder.
 
+<br>
+
 ## Dependencies/Libraries/Packages/Languages
 
 - Spring Web
